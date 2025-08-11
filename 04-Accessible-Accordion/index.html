@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>accessible accordion HTML & CSS and JS</title>
+</head>
+<body>
+        <div class="wrapper">
+            <div class="accordion">
+                <div class="accordion-panel">
+                    <h2 id="panel1-heading">
+                        <button 
+                            type="button"
+                            class="accordion-trigger"
+                            aria-controls="panel1-content"
+                            aria-expanded="true"
+                        >
+                            <span id="panel1-title" class="accordion-title">Boating</span>
+                            <svg aria-hidden="true" class="accordion-icon">
+                                <use href="assets/icons.svg#github"></use>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div
+                        class="accordion-content"
+                        id="panel1-content"
+                        aria-labelledby="panel1-heading"
+                        role="region"
+                        aria-hidden="true"
+                     >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque culpa ipsa eius natus cum quae voluptates iusto. Beatae ullam repellat doloremque laborum aperiam odio numquam nulla libero repellendus consectetur?</p>
+                            <img class="accordion-image" src="assets/images/image-01.webp" alt="image"/>
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <h2 id="panel2-heading">
+                        <button
+                                type="button"
+                                class="accordion-trigger"
+                                aria-controls="panel2-content"
+                                aria-expanded="false"
+                        >
+                            <span id="panel2-title" class="accordion-title">Boating</span>
+                            <svg aria-hidden="true" class="accordion-icon" fill="currentColor">
+                                <use href="assets/icons.svg#github"></use>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div
+                            class="accordion-content"
+                            id="panel2-content"
+                            aria-labelledby="panel2-heading"
+                            role="region"
+                            aria-hidden="false"
+                    >
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque culpa ipsa eius natus cum quae voluptates iusto. Beatae ullam repellat doloremque laborum aperiam odio numquam nulla libero repellendus consectetur?</p>
+                        <img class="accordion-image" src="assets/images/image-02.webp" alt="image"/>
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <h2 id="panel3-heading">
+                        <button
+                                type="button"
+                                class="accordion-trigger"
+                                aria-controls="panel3-content"
+                                aria-expanded="false"
+                        >
+                            <span id="panel3-title" class="accordion-title">Boating</span>
+                            <svg aria-hidden="true" class="accordion-icon">
+                                <use href="assets/icons.svg#github"></use>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div
+                            class="accordion-content"
+                            id="panel3-content"
+                            aria-labelledby="panel3-heading"
+                            role="region"
+                            aria-hidden="true"
+                    >
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque culpa ipsa eius natus cum quae voluptates iusto. Beatae ullam repellat doloremque laborum aperiam odio numquam nulla libero repellendus consectetur?</p>
+                        <img class="accordion-image" src="assets/images/image-03.webp" alt="image"/>
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <h2 id="panel4-heading">
+                        <button
+                                type="button"
+                                class="accordion-trigger"
+                                aria-controls="panel4-content"
+                                aria-expanded="false"
+                        >
+                            <span id="panel4-title" class="accordion-title">Boating</span>
+                            <svg aria-hidden="true" class="accordion-icon">
+                                <use href="assets/icons.svg#github"></use>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div
+                            class="accordion-content"
+                            id="panel4-content"
+                            aria-labelledby="panel4-heading"
+                            role="region"
+                            aria-hidden="true"
+                    >
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque culpa ipsa eius natus cum quae voluptates iusto. Beatae ullam repellat doloremque laborum aperiam odio numquam nulla libero repellendus consectetur?</p>
+                        <img class="accordion-image" src="assets/images/image-04.webp" alt="image"/>
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <h2 id="panel5-heading">
+                        <button
+                                type="button"
+                                class="accordion-trigger"
+                                aria-controls="panel5-content"
+                                aria-expanded="false"
+                        >
+                            <span id="panel5-title" class="accordion-title">Boating</span>
+                            <svg aria-hidden="true" class="accordion-icon">
+                                <use href="assets/icons.svg#github"></use>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div
+                            class="accordion-content"
+                            id="panel5-content"
+                            aria-labelledby="panel5-heading"
+                            role="region"
+                            aria-hidden="true"
+                    >
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque culpa ipsa eius natus cum quae voluptates iusto. Beatae ullam repellat doloremque laborum aperiam odio numquam nulla libero repellendus consectetur?</p>
+                        <img class="accordion-image" src="assets/images/image-06.webp" alt="image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
