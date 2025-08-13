@@ -1,0 +1,284 @@
+/*========Poppins Font=======*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*============Variables==============*/
+    :root{
+        --grid-type:auto-fill;
+        --gap:1rem;
+        /*--------main font-----------*/
+        --ff:"Poppins", sans-serif;
+        /*---------main-colors-------*/
+        /* HSL palette based on #D1FAE5*/
+        --clr-primary-100: hsl(138.46 76.47% 96.67%);
+        --clr-primary-200: hsl(149, 80%, 95%);
+        --clr-primary-300: hsl(149, 80%, 90%);
+        --clr-primary-400: hsl(149, 80%, 80%);
+        --clr-primary-600: hsl(149, 80%, 70%);
+        --clr-primary-700: hsl(149, 80%, 60%);
+        --clr-primary-800: hsl(149, 80%, 20%);
+        /*rgb(22 101 52);*/
+        /*rgb(21 128 61);*/
+        --bg-clr:hsl(100 100% 100%);
+        /*-------font-size---------*/
+        --fs-sm:.85rem;
+        --fs-md:1rem;
+        --fs-l:1.125rem;
+        --fs-xl:1.25rem;
+        --fs-xxl:2rem;
+        /*------Font-Weight-------*/
+        --font-lighter:200;
+        --font-normal:400;
+        --font-bold:600;
+        /*----------Border radius----------*/
+        --br:5px;
+
+    }
+    *{
+        box-sizing: border-box;
+    }
+    *,*::before,*::after{
+        margin: 0;
+        padding: 0;
+    }
+    svg{
+        width: 20px;
+        height: 20px;
+        fill: var(--clr-primary-800);
+    }
+    h1,h2,h3{
+        text-transform:uppercase;
+        color: var(--clr-primary-800);
+    }
+    h3 {
+        line-height: 1.35;
+    }
+    h1{
+        line-height: 1.6;
+        font-size: clamp(2.75rem, 5vw - 1rem, 4.5rem);
+    }
+    h2{
+        font-size: clamp(1rem, 2vw - 1rem, 2rem);
+    }
+    .dropdown-options,ol{
+        list-style-type: none;
+    }
+    input,
+    label,select,
+    legend,button{
+        border: 0;
+        outline: 0;
+        font-family: inherit;
+        color: inherit;
+        background-color: transparent;
+    }
+
+    p{
+        line-height: 1.7;
+        font-weight: var(--font-lighter);
+        text-wrap:pretty;
+    }
+    html{
+        line-height: 1.2;
+        /*color-scheme: light dark;*/
+    }
+    body{
+        font-family: var(--ff);
+        background-color: var(--bg-clr);
+        color: var(--clr-primary-800);
+    }
+
+    /*----------------UTILS CLASSES---------------*/
+    .container{
+        width: 80%;
+        max-width: 1200px;
+        margin-inline: auto;
+        margin-block: 5em;
+    }
+    .grid-layout{
+        display: grid;
+        grid-template-columns: repeat(var(--grid-type),minmax(min(320px,100%),1fr));
+        gap: clamp(1rem, 2vw, 2rem);
+    }
+    .flex-col{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: row;
+        gap: clamp(0.5rem, 2vw, 2rem);
+    }
+    .btn{
+        background-color: transparent;
+        font-size: var(--fs-md);
+        padding:min(.5rem,calc(2vw));
+        border-radius: var(--br);
+
+    }
+    /*-----------------HEADER STYLING------------*/
+    header{
+        text-align: center;
+        max-width: 100%;
+        padding: 1em;
+        margin: 0 auto;
+        background-color: var(--clr-primary-200);
+    }
+    header fieldset{
+        padding: 2em 1em;
+        border-radius: 5px ;
+        border: 3px solid var(--clr-primary-800);
+    }
+    legend{
+        padding: .5em;
+        text-transform: uppercase;
+        font-weight: var(--font-bold);
+
+    }
+    /*--------Custom Dropdown-----------*/
+    .list-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .dropdown{
+        width: 30%;
+        border: 1px solid var(--clr-primary-800);
+        position: relative;
+        background: var(--clr-primary-200);
+        cursor: pointer;
+        padding: 0;
+        border-radius: var(--br);
+    }
+    .dropdown:hover .dropdown-options{
+        opacity: 1;
+        display: block;
+        appearance:auto;
+    }
+    .dropdown legend{
+        padding: .2em min(1rem , calc(1vw - 1rem));
+        font-size: clamp(.5rem, 1vw + 0.5rem, 1.25rem);
+    }
+    .dropdown-selected{
+        font-size: var(--fs-md);
+        position: relative;
+        padding: .5em;
+    }
+    .dropdown-selected:before{
+        content: "▼";
+        position: absolute;
+        right: 0;
+        color: var(--clr-primary-800);
+        font-size: var(--fs-sm);
+        width: 50%;
+        /*until handel select content*/
+        display: none;
+
+    }
+    .dropdown-options{
+        opacity: 0;
+        appearance: none;
+        position: absolute;
+        display: none;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        color: var(--clr-primary-800);
+        padding: min(1rem , calc(1vw - 1rem));
+        transition: opacity .5s ease , appearance .5s ease;
+        transform-origin: top;
+        z-index: 10;
+        overflow-y: scroll;
+        max-height: 50vh;
+    }
+
+    /* Width of the scrollbar */
+    .dropdown-options::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .dropdown-options::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .dropdown-options::-webkit-scrollbar-thumb {
+        background: var(--clr-primary-300);
+        border-radius: 20px;
+        transition: background 0.3s;
+    }
+    .dropdown-options li{
+        background-color: var(--clr-primary-200);
+        padding: .85em;
+        transition: all .5s ease;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown-options li:hover{
+    background-color: var(--clr-primary-800);
+    color: var(--clr-primary-200);
+    }
+
+    /*------------------CARDS STYLE--------------------*/
+    .card{
+        background-color:var(--clr-primary-100);
+        padding: min(1.5rem, calc(10vw - 1.5rem));
+        border-radius: var(--br);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .card p{
+        line-height: 1.5;
+        font-weight: var(--font-normal);
+        font-size: var(--fs-sm);
+        padding: .5em 0;
+    }
+    .card .card-buttons button:first-child{
+        font-weight: var(--font-bold);
+        margin-inline-end: .5em;
+    }
+    .card .card-buttons button:first-child:hover{
+        background-color:var(--clr-primary-300) ;
+    }
+
+
+
+/**=========================================================================
+if you want to use select instead of .dropdown-options make sur
+to it in side supports bcs this future currently have limited browser support
+============================================================================*/
+/*    @supports (selector(::picker-icon)) {*/
+/*        !*select,*!*/
+/*        !*::picker(select) {*!*/
+/*        !*            appearance:none;*!*/
+/*        !*        }*!*/
+/*        !*select::picker-icon {*!*/
+/*        !*            color: #1e1e1e;*!*/
+/*        !*            transition: 0.4s rotate;*!*/
+/*        !*        }*!*/
+/*        !*        select:open::picker-icon {*!*/
+/*        !*            rotate: 180deg;*!*/
+/*        !*        }*!*/
+/*        !*        ::picker(select) {*!*/
+/*        !*            opacity: 0;*!*/
+/*        !*            transition: all 0.4s allow-discrete;*!*/
+/*        !*        }*!*/
+/*        !*        ::picker(select):popover-open {*!*/
+/*        !*            opacity: 1;*!*/
+/*        !*        }*!*/
+/*        !*        @starting-style {*!*/
+/*        !*            ::picker(select):popover-open {*!*/
+/*        !*                opacity: 0;*!*/
+/*        !*            }*!*/
+/*        !*        }*!*/
+/*        !*        ::picker(select) {*!*/
+/*        !*            top: calc(anchor(bottom) + 1px);*!*/
+/*        !*            left: anchor(10%);*!*/
+/*        !*        }*!*/
+/*        !*    option {*!*/
+/*        !*        border: 0;*!*/
+/*        !*        background-color: transparent;*!*/
+/*        !*        border-radius: 0;*!*/
+/*        !*        padding: .5em;*!*/
+/*        !*        transition: background-color .5s ease , color .5s ease;*!*/
+/*        !*    }*!*/
+/*        !*    option:hover,*!*/
+/*        !*    option:focus{*!*/
+/*        !*        background-color: var(--bg-clr);*!*/
+/*        !*        color: var(--clr-primary-800);*!*/
+/*        !*    }*!*/
+/*}*/
