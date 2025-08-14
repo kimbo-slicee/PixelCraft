@@ -1,0 +1,79 @@
+/*==========Custom Font===========*/
+@font-face {
+    font-family: "Inter";
+    src: url("public/assets/fonts/inter.woff") format("woff");
+    font-weight: 200 900;
+    font-display: swap;
+}
+/*======VARIABLE=====*/
+:root{
+    /*----main colors----*/
+    --clr-neutral-100:hsl(48,71%,99%);
+    --clr-neutral-200:hsl(237,20%,80%);
+    --clr-neutral-400:hsl(252,2%,41%);
+    --clr-neutral-800:hsl(240,100%,5%);
+    --clr-neutral-900:hsl(238,92%,5%);
+    --heading-clr:var(--clr-neutral-900);
+    --text-clr:var(--clr-neutral-100);
+    --body-clr:var(--clr-neutral-200);
+    /*----accent Colors----*/
+    --clr-orange-400:hsl(5,86%,63%);
+    --clr-yellow-400:hsl(33,79%,61%);
+    /*-----------Font Family---------*/
+    --ff-base:"Inter",sans-serif;
+    /*-----------Font Weight---------*/
+    --fw-light:200;
+    --fw-regular:400;
+    --fw-semi-bold:700;
+    --fw-bold:900;
+    /*------------Font Size----------*/
+    --fs-400:1rem;
+    --fs-500:1.25rem;
+    --fs-00:1.5rem;
+    --fs-700:2rem;
+    --fs-800:2.5rem;
+    --fs-900:3rem;
+}
+/*==============REST STYLE==============*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+body{
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+}
