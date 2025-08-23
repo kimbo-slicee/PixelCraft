@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+}
+*,*::before, *::after{
+    margin: 0;
+    padding: 0;
+}
+html{
+    color-scheme: light dark;
+}
+body{
+    font-family: "system-ui";
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+main{
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-inline: 1rem;
+}
+h1{
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2;
+}
+h2{
+    font-size: 2.25rem;
+}
+section{
+     padding:3rem 1rem;
+     margin-block-end: 2rem;
+}
+section:nth-child(3){
+    position: relative;
+    isolation: isolate;
+
+}
+section:nth-child(3)::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: skewY(-5deg);
+    background:linear-gradient(
+            45deg,
+            #12c2e9,
+            #c471ed,
+            #f64f59
+    );
+
+}
+
+section:nth-child(5){
+    position: relative;
+    background: linear-gradient( 45deg,
+    #fdc830,
+    #f37335
+    );
+}
+section:nth-child(5)::before,
+section:nth-child(5)::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    mask: url("assests/svg-path.svg");
+    mask-size: 10px 50px;
+    background-color: black;
+
+
+}
+section:nth-child(5)::before{
+    top:0;
+}
+section:nth-child(5)::after{
+    bottom: 0;
+    rotate: .5turn;
+}
+section:nth-child(7){
+    background: linear-gradient(
+        45deg,
+        #ffafbd,
+        #ffc3a0
+    );
+    --mask:
+            radial-gradient(34.99px at 50% 48px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
+            radial-gradient(34.99px at 50% -18px,#0000 99%,#000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,
+            radial-gradient(34.99px at 50% calc(100% - 48px),#000 99%,#0000 101%) calc(50% - 60px) 100%/120px 51% repeat-x,
+            radial-gradient(34.99px at 50% calc(100% + 18px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+
